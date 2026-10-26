@@ -1,0 +1,5 @@
+build/
+resq.db
+resq.db-wal
+resq.db-shm
+resq_service_test.db*

@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ResQ: Setup vcpkg (one time)",
+      "type": "process",
+      "command": "cmd.exe",
+      "args": [ "/c", "setup.bat" ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "ResQ: Build (Release)",
+      "type": "process",
+      "command": "cmd.exe",
+      "args": [ "/c", "build.bat" ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "ResQ: Build (Debug)",
+      "type": "process",
+      "command": "cmd.exe",
+      "args": [ "/c", "cmake --preset windows && cmake --build --preset debug" ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "ResQ: Run server",
+      "type": "process",
+      "command": "cmd.exe",
+      "args": [ "/c", "run.bat" ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "ResQ: Run tests",
+      "type": "process",
+      "command": "cmd.exe",
+      "args": [ "/c", "test.bat" ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ResQ: Debug server",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/Debug/resq_server.exe",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "ResQ: Build (Debug)",
+      "console": "integratedTerminal"
+    }
+  ]
+}
